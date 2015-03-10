@@ -1,0 +1,200 @@
+\hypertarget{class_hamiltonian}{\section{Hamiltonian$<$ walker $>$ Class Template Reference}
+\label{class_hamiltonian}\index{Hamiltonian$<$ walker $>$@{Hamiltonian$<$ walker $>$}}
+}
+
+
+{\ttfamily \#include $<$pairinghamiltonian.\+h$>$}
+
+
+
+Inheritance diagram for Hamiltonian$<$ walker $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_hamiltonian__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hamiltonian_a46352920e7b3584bc39c090d61d81da0}{Hamiltonian} (unsigned, unsigned, const std\+::vector$<$ double $>$ \&, const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&)
+\item 
+double \hyperlink{class_hamiltonian_abd13e961c8b87b3f29a4df3781f7564e}{Hsp} (const std\+::vector$<$ walker $>$ \&) const 
+\item 
+double \hyperlink{class_hamiltonian_a3505c8e69ce74694dde7c4a523ca7b28}{H\+Gij} (const std\+::vector$<$ walker $>$ \&) const 
+\item 
+double \hyperlink{class_hamiltonian_a01979613275eed5b5c72c85a01be263a}{Diagmatrixelement} (const std\+::vector$<$ walker $>$ \&) const 
+\item 
+double \hyperlink{class_hamiltonian_a36a5a68b3c77370a5a4130be3393c007}{Offdiagmatrixelement} (unsigned, unsigned) const 
+\item 
+double \hyperlink{class_hamiltonian_ae1e4d1a832d6ce46c67a090dfe15e0b5}{Probdiagonal} (const std\+::vector$<$ walker $>$ \&) const 
+\item 
+double \hyperlink{class_hamiltonian_a665d48115a9a9a868328bce1537e6641}{Proboffdiagonal} (const std\+::vector$<$ walker $>$ \&) const 
+\item 
+double \hyperlink{class_hamiltonian_a73563fb395a29fb15daf88aaa46748e3}{shift} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_hamiltonian_ab2981fae639bba11c2029f8f6156222f}{unsigned {\bfseries levels}}\label{class_hamiltonian_ab2981fae639bba11c2029f8f6156222f}
+
+\item 
+\hypertarget{class_hamiltonian_afe7ee42a46e4c25a3001710baadf48d4}{unsigned {\bfseries N\+P}}\label{class_hamiltonian_afe7ee42a46e4c25a3001710baadf48d4}
+
+\item 
+\hypertarget{class_hamiltonian_ad9b2f106cd03bb3607329909d65307d8}{std\+::vector$<$ double $>$ {\bfseries Esp}}\label{class_hamiltonian_ad9b2f106cd03bb3607329909d65307d8}
+
+\item 
+\hypertarget{class_hamiltonian_a12a25bd94afcb25ead9cc82864254b1c}{std\+::vector$<$ std\+::vector\\*
+$<$ double $>$ $>$ {\bfseries Gij}}\label{class_hamiltonian_a12a25bd94afcb25ead9cc82864254b1c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename walker$>$class Hamiltonian$<$ walker $>$}
+
+\hyperlink{class_hamiltonian}{Hamiltonian} class. walker type must be an unsigned type like uint32\+\_\+t or uint64\+\_\+t!
+
+
+\begin{DoxyParams}{Parameters}
+{\em N\+P} & integer value for the number of pairs. \\
+\hline
+{\em levels} & integer value for the number of levels. \\
+\hline
+{\em Esp} & std\+::vector containing the single particle energies. \\
+\hline
+{\em Gij} & 2-\/dimensional std\+::vector containing all the two body matrix elements Gij. \\
+\hline
+{\em nbits} & integer value for the number of bits in the walker data type. \\
+\hline
+{\em Eshift} & double value for the shift in the diagonal matrix elements.\+s\\
+\hline
+\end{DoxyParams}
+The constructor requires as input the number of levels (levels), the number of pairs (N\+P), an std\+::vector containing the set of single particle energies $\epsilon_{k}$ (Esp), and lastly a two dimensional std\+::vector containing the set of pairing matrix elements $G_{ij}$ (Gij). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_hamiltonian_a46352920e7b3584bc39c090d61d81da0}{\index{Hamiltonian@{Hamiltonian}!Hamiltonian@{Hamiltonian}}
+\index{Hamiltonian@{Hamiltonian}!Hamiltonian@{Hamiltonian}}
+\subsubsection[{Hamiltonian}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ {\bf Hamiltonian}$<$ walker $>$\+::{\bf Hamiltonian} (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{nlevels, }
+\item[{unsigned}]{np, }
+\item[{const std\+::vector$<$ double $>$ \&}]{r\+Esp, }
+\item[{const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&}]{r\+Gij}
+\end{DoxyParamCaption}
+)}}\label{class_hamiltonian_a46352920e7b3584bc39c090d61d81da0}
+Constructor for the \hyperlink{class_hamiltonian}{Hamiltonian} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nlevels} & integer value representing the number of levels. \\
+\hline
+{\em np} & integer value representing the number of pairs. \\
+\hline
+{\em r\+Esp} & const reference to an std\+::vector containing the single particle energies. \\
+\hline
+{\em r\+Gij} & const reference to a 2-\/dimensional std\+::vector containing all the two body matrix elements Gij. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_hamiltonian_a01979613275eed5b5c72c85a01be263a}{\index{Hamiltonian@{Hamiltonian}!Diagmatrixelement@{Diagmatrixelement}}
+\index{Diagmatrixelement@{Diagmatrixelement}!Hamiltonian@{Hamiltonian}}
+\subsubsection[{Diagmatrixelement}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Hamiltonian}$<$ walker $>$\+::Diagmatrixelement (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ walker $>$ \&}]{rstate}
+\end{DoxyParamCaption}
+) const}}\label{class_hamiltonian_a01979613275eed5b5c72c85a01be263a}
+This function returns a diagonal matrix element of the hamiltonian matrix i.\+e. $\langle \textbf{n}_{i} |H| \textbf{n}_{i} \rangle$. 
+\begin{DoxyParams}{Parameters}
+{\em rstate} & const reference to an std\+::vector representing a state in configuration space. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hamiltonian_a3505c8e69ce74694dde7c4a523ca7b28}{\index{Hamiltonian@{Hamiltonian}!H\+Gij@{H\+Gij}}
+\index{H\+Gij@{H\+Gij}!Hamiltonian@{Hamiltonian}}
+\subsubsection[{H\+Gij}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Hamiltonian}$<$ walker $>$\+::H\+Gij (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ walker $>$ \&}]{rstate}
+\end{DoxyParamCaption}
+) const}}\label{class_hamiltonian_a3505c8e69ce74694dde7c4a523ca7b28}
+This function returns the result of the operation of the two-\/body part of the hamiltonian on a state in configuration space. \[H_{2b}|\textbf{n} \rangle = \sum_{i,j>0}^{\omega}G_{ij}a^{\dagger}_{j}a^{\dagger}_{\tilde{j}}a_{i}a_{\tilde{i}} |\textbf{n} \rangle \]
+
+
+\begin{DoxyParams}{Parameters}
+{\em rstate} & const reference to an std\+::vector representing a state in configuration space. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hamiltonian_abd13e961c8b87b3f29a4df3781f7564e}{\index{Hamiltonian@{Hamiltonian}!Hsp@{Hsp}}
+\index{Hsp@{Hsp}!Hamiltonian@{Hamiltonian}}
+\subsubsection[{Hsp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Hamiltonian}$<$ walker $>$\+::Hsp (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ walker $>$ \&}]{rstate}
+\end{DoxyParamCaption}
+) const}}\label{class_hamiltonian_abd13e961c8b87b3f29a4df3781f7564e}
+This function returns the result of the operation of the one-\/body part of the hamiltonian on a state in configuration space. \[H_{1b}|\textbf{n} \rangle = 2\sum_{i>0}^{\omega }\epsilon_{i}(a^{\dagger}_{i}a_{i} + a^{\dagger}_{\tilde{i}}a_{\tilde{i}}) |\textbf{n} \rangle \]
+
+
+\begin{DoxyParams}{Parameters}
+{\em rstate} & const reference to an std\+::vector representing a state in configuration space. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hamiltonian_a36a5a68b3c77370a5a4130be3393c007}{\index{Hamiltonian@{Hamiltonian}!Offdiagmatrixelement@{Offdiagmatrixelement}}
+\index{Offdiagmatrixelement@{Offdiagmatrixelement}!Hamiltonian@{Hamiltonian}}
+\subsubsection[{Offdiagmatrixelement}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Hamiltonian}$<$ walker $>$\+::Offdiagmatrixelement (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{i, }
+\item[{unsigned}]{j}
+\end{DoxyParamCaption}
+) const}}\label{class_hamiltonian_a36a5a68b3c77370a5a4130be3393c007}
+This function returns an off-\/diagonal matrix element of the hamiltonian matrix i.\+e. $\langle \textbf{n}_{j} |H| \textbf{n}_{i} \rangle$. 
+\begin{DoxyParams}{Parameters}
+{\em rstate} & const reference to an std\+::vector representing a state in configuration space. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hamiltonian_ae1e4d1a832d6ce46c67a090dfe15e0b5}{\index{Hamiltonian@{Hamiltonian}!Probdiagonal@{Probdiagonal}}
+\index{Probdiagonal@{Probdiagonal}!Hamiltonian@{Hamiltonian}}
+\subsubsection[{Probdiagonal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Hamiltonian}$<$ walker $>$\+::Probdiagonal (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ walker $>$ \&}]{rstate}
+\end{DoxyParamCaption}
+) const}}\label{class_hamiltonian_ae1e4d1a832d6ce46c67a090dfe15e0b5}
+This function returns the probability of making a diagonal transition in configuration space i.\+e. where a state transitions into the same state and no pairs are moved.
+
+In general the set of transition probabilites are proportional to the normalized matrix elements of all states connected to the current configuration. \[\mathcal{P}_{ij} = \frac{\langle \textbf{n}_{j} |H| \textbf{n}_{i} \rangle}{d_{ij}}\] where $d_{ij} = \sum_{j} \langle \textbf{n}_{j} |H| \textbf{n}_{i} \rangle$ following the linear normalization condition.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rstate} & const reference to an std\+::vector representing a state in configuration space. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hamiltonian_a665d48115a9a9a868328bce1537e6641}{\index{Hamiltonian@{Hamiltonian}!Proboffdiagonal@{Proboffdiagonal}}
+\index{Proboffdiagonal@{Proboffdiagonal}!Hamiltonian@{Hamiltonian}}
+\subsubsection[{Proboffdiagonal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Hamiltonian}$<$ walker $>$\+::Proboffdiagonal (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ walker $>$ \&}]{rstate}
+\end{DoxyParamCaption}
+) const}}\label{class_hamiltonian_a665d48115a9a9a868328bce1537e6641}
+This function returns the probability of making a off-\/diagonal transition in configuration space i.\+e. where a state transitions into a new state and a pair is moved from an occupied level to an unoccupied level.
+
+In general the set of transition probabilites are proportional to the normalized matrix elements of all states connected to the current configuration. \[\mathcal{P}_{ij} = \frac{\langle \textbf{n}_{j} |H| \textbf{n}_{i} \rangle}{d_{ij}}\] where $d_{ij} = \sum_{j} \langle \textbf{n}_{j} |H| \textbf{n}_{i} \rangle$ following the linear normalization condition.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rstate} & const reference to an std\+::vector representing a state in configuration space. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hamiltonian_a73563fb395a29fb15daf88aaa46748e3}{\index{Hamiltonian@{Hamiltonian}!shift@{shift}}
+\index{shift@{shift}!Hamiltonian@{Hamiltonian}}
+\subsubsection[{shift}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Hamiltonian}$<$ walker $>$\+::shift (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_hamiltonian_a73563fb395a29fb15daf88aaa46748e3}
+This function returns the diagonal shift Eshift. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pairinghamiltonian_8h}{pairinghamiltonian.\+h}\end{DoxyCompactItemize}

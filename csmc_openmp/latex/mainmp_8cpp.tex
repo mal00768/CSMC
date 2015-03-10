@@ -1,0 +1,62 @@
+\hypertarget{mainmp_8cpp}{\section{mainmp.\+cpp File Reference}
+\label{mainmp_8cpp}\index{mainmp.\+cpp@{mainmp.\+cpp}}
+}
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$omp.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}pairinghamiltonian.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}wavefunction.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}walker.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}operators.\+h\char`\"{}}\\*
+Include dependency graph for mainmp.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mainmp_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{mainmp_8cpp_a98f66102c54a3c53c1bf88c389f63433}{\#define {\bfseries walker\+\_\+type}~uint64\+\_\+t}\label{mainmp_8cpp_a98f66102c54a3c53c1bf88c389f63433}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{mainmp_8cpp_a72848947a8433188bbdc6ccb81ef8ef1}{double {\bfseries average} (const std\+::vector$<$ double $>$ \&)}\label{mainmp_8cpp_a72848947a8433188bbdc6ccb81ef8ef1}
+
+\item 
+\hypertarget{mainmp_8cpp_ab83397178a3535292c481582fb9db976}{double {\bfseries statistical\+\_\+error} (double, const std\+::vector$<$ double $>$ \&)}\label{mainmp_8cpp_ab83397178a3535292c481582fb9db976}
+
+\item 
+\hypertarget{mainmp_8cpp_ab3f2545adee38348b42933d73369aa17}{void {\bfseries averageoccs} (std\+::vector$<$ double $>$ \&, const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&)}\label{mainmp_8cpp_ab3f2545adee38348b42933d73369aa17}
+
+\item 
+\hypertarget{mainmp_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{int {\bfseries main} (int argc, char $\ast$$\ast$argv)}\label{mainmp_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the main file for the parallel version of the P\+M\+C software. Parallelization is implemented using Open\+M\+P. Also, c++11 support is required and the g++ -\/std=c++11 flag must be set during compilation.
+
+It is assumed that the software will be run on a 64 bit x86 system. Thus, the unsigned data type used to represent walkers is defined as\+: \char`\"{}\#define walker\+\_\+type uint64\+\_\+t\char`\"{}. If this is not the case then this must be changed to reflect the word length of the host system. (e.\+g. uint32\+\_\+t)
+
+An input file is required containing the parameters for the Monte Carlo evolution and the physical parameters needed to define the number of particles, levels, and various aspects of the pairing hamiltonian.
+
+Format of input file assumes\+: 1st line\+: number of walkers (numwalkers), number of steps (numsteps), length of each step (steplength), max iterations (max\+\_\+iterations) 2nd line\+: number of pair orbitals for $\vert$n$>$ (levels), number of pairs (N\+P) 3rd line\+: s.\+p. energy of each orbital (ee) all other\+: i, j matrix indices and Gij values (Gij)
+
+A sample input file is included labeled 2levels.\+inpt.
+
+For the first iteration of the algorithm (equilibration step) the evolution will occur as follows. Every independent walker is initialized and then randomly walked for numsteps of length steplength. The variable steplength indicates how many random moves will take place during each numstep before the walker is saved into the wave function. After this occurs for every walker the entire wave function is then normalized and a new generation of walkers is selected via importance sampling from the previous generation. After the last numstep estimates of the ground state energy and occupation numbers are calculated.
+
+For iterations 2 to max\+\_\+iterations, numstep is set to 1. Every independent walker is initialized via importance sampling from the result of the previous iteration. The walkers are then walked for steplength and additional estimates of the energy and occupation numbers are calculated. Every estimate is saved so that the averages and statistical errors can be computed.
+
+The final output of the software will be the average ground state energy and it's statistical error and the occupation numbers for every level. 

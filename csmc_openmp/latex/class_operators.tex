@@ -1,0 +1,170 @@
+\hypertarget{class_operators}{\section{Operators$<$ walker $>$ Class Template Reference}
+\label{class_operators}\index{Operators$<$ walker $>$@{Operators$<$ walker $>$}}
+}
+
+
+{\ttfamily \#include $<$operators.\+h$>$}
+
+
+
+Inheritance diagram for Operators$<$ walker $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_operators__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Operators$<$ walker $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_operators__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_operators_ae4bac9192cae36287079510f5f5dc794}{Operators} (unsigned, unsigned, const std\+::vector$<$ double $>$ \&, const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&, const \hyperlink{class_wavefunction}{Wavefunction}$<$ walker $>$ \&)
+\item 
+double \hyperlink{class_operators_a047afdaf0c954f142325b8f14d9211f4}{Egs} () const 
+\item 
+double \hyperlink{class_operators_a6a8208aeba7b7a790d29f27574d5e435}{Expectation\+H} () const 
+\item 
+double \hyperlink{class_operators_ac773ffd750e58a7b7677946d2c8f7aca}{Exp\+Hsp} (typename std\+::unordered\+\_\+map$<$ std\+::vector$<$ walker $>$, double $>$\+::const\+\_\+iterator) const 
+\item 
+double \hyperlink{class_operators_a9b9e0389a6fc0219105959a5f9c761ad}{Exp\+H\+Gij} (typename std\+::unordered\+\_\+map$<$ std\+::vector$<$ walker $>$, double $>$\+::const\+\_\+iterator) const 
+\item 
+double \hyperlink{class_operators_af8b3a1ae13170fa9badcb0c35bbe25b7}{occupation\+\_\+level} (unsigned)
+\item 
+void \hyperlink{class_operators_a9308511b927ba7a0ca73ffc5af76ec48}{occupations} (std\+::vector$<$ double $>$ \&)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename walker$>$class Operators$<$ walker $>$}
+
+Operator class. Subclasses from \hyperlink{class_hamiltonian}{Hamiltonian} class. walker type must be an unsigned type like uint32\+\_\+t or uint64\+\_\+t!
+
+
+\begin{DoxyParams}{Parameters}
+{\em nbits} & unsigned integer indicating the number of bits in the walker type. \\
+\hline
+{\em levels} & unsigned integer containing the number of levels. \\
+\hline
+{\em np} & unsigned integer containing the number of pairs. \\
+\hline
+{\em wf} & const reference to the wave function class. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_operators_ae4bac9192cae36287079510f5f5dc794}{\index{Operators@{Operators}!Operators@{Operators}}
+\index{Operators@{Operators}!Operators@{Operators}}
+\subsubsection[{Operators}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ {\bf Operators}$<$ walker $>$\+::{\bf Operators} (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{nlevels, }
+\item[{unsigned}]{nnp, }
+\item[{const std\+::vector$<$ double $>$ \&}]{r\+Esp, }
+\item[{const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&}]{r\+Gij, }
+\item[{const {\bf Wavefunction}$<$ walker $>$ \&}]{rwf}
+\end{DoxyParamCaption}
+)}}\label{class_operators_ae4bac9192cae36287079510f5f5dc794}
+Constructor for the \hyperlink{class_operators}{Operators} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nlevels} & integer value representing the number of levels. \\
+\hline
+{\em nnp} & integer value representing the number of pairs. \\
+\hline
+{\em r\+Esp} & const reference to an std\+::vector containing the single particle energies. \\
+\hline
+{\em r\+Gij} & const reference to a 2-\/dimensional std\+::vector containing all the two body matrix elements Gij. \\
+\hline
+{\em rwf} & const reference to the wave function class. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_operators_a047afdaf0c954f142325b8f14d9211f4}{\index{Operators@{Operators}!Egs@{Egs}}
+\index{Egs@{Egs}!Operators@{Operators}}
+\subsubsection[{Egs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Operators}$<$ walker $>$\+::Egs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_operators_a047afdaf0c954f142325b8f14d9211f4}
+This function returns the ground state energy through the expectation value $\sum_{i} \langle \textbf{n}_{i} | H | \Psi \rangle$. This uses the non-\/standard linear normalization of the wave function. It does not require the wave function to be normalized prior to the function call. \hypertarget{class_operators_a6a8208aeba7b7a790d29f27574d5e435}{\index{Operators@{Operators}!Expectation\+H@{Expectation\+H}}
+\index{Expectation\+H@{Expectation\+H}!Operators@{Operators}}
+\subsubsection[{Expectation\+H}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Operators}$<$ walker $>$\+::Expectation\+H (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_operators_a6a8208aeba7b7a790d29f27574d5e435}
+This function returns the ground state energy by calculating $\langle \Psi | H | \Psi \rangle$. This uses the quantum mechanical square normalization. It does not require the wave function to be normalized prior to the function call. \hypertarget{class_operators_a9b9e0389a6fc0219105959a5f9c761ad}{\index{Operators@{Operators}!Exp\+H\+Gij@{Exp\+H\+Gij}}
+\index{Exp\+H\+Gij@{Exp\+H\+Gij}!Operators@{Operators}}
+\subsubsection[{Exp\+H\+Gij}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Operators}$<$ walker $>$\+::Exp\+H\+Gij (
+\begin{DoxyParamCaption}
+\item[{typename std\+::unordered\+\_\+map$<$ std\+::vector$<$ walker $>$, double $>$\+::const\+\_\+iterator}]{it}
+\end{DoxyParamCaption}
+) const}}\label{class_operators_a9b9e0389a6fc0219105959a5f9c761ad}
+This function returns the expectation value of the two body part of the hamiltonian in configuration space. \[ \alpha_{i}\alpha_{j} \langle \textbf{n}_{j}|H_{2b}|\textbf{n}_{i} \rangle \] \[ = \alpha_{i}\alpha_{j} \langle \textbf{n}_{j}| \sum_{i,j>0}^{\omega}G_{ij}a^{\dagger}_{j}a^{\dagger}_{\tilde{j}}a_{i}a_{\tilde{i}} |\textbf{n}_{i} \rangle \]
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & const iterator pointing to a state in the wave function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_operators_ac773ffd750e58a7b7677946d2c8f7aca}{\index{Operators@{Operators}!Exp\+Hsp@{Exp\+Hsp}}
+\index{Exp\+Hsp@{Exp\+Hsp}!Operators@{Operators}}
+\subsubsection[{Exp\+Hsp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Operators}$<$ walker $>$\+::Exp\+Hsp (
+\begin{DoxyParamCaption}
+\item[{typename std\+::unordered\+\_\+map$<$ std\+::vector$<$ walker $>$, double $>$\+::const\+\_\+iterator}]{it}
+\end{DoxyParamCaption}
+) const}}\label{class_operators_ac773ffd750e58a7b7677946d2c8f7aca}
+This function returns the expectation value of the one body part of the hamiltonian in configuration space. \[ \alpha_{i}^{2} \langle \textbf{n}_{i}|H_{1b}|\textbf{n}_{i} \rangle \] \[ = \alpha_{i}^{2} \langle \textbf{n}_{i}| 2\sum_{i>0}^{\omega }\epsilon_{i}(a^{\dagger}_{i}a_{i} + a^{\dagger}_{\tilde{i}}a_{\tilde{i}}) |\textbf{n}_{i} \rangle \]
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & const iterator pointing to a state in the wave function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_operators_af8b3a1ae13170fa9badcb0c35bbe25b7}{\index{Operators@{Operators}!occupation\+\_\+level@{occupation\+\_\+level}}
+\index{occupation\+\_\+level@{occupation\+\_\+level}!Operators@{Operators}}
+\subsubsection[{occupation\+\_\+level}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Operators}$<$ walker $>$\+::occupation\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{k}
+\end{DoxyParamCaption}
+)}}\label{class_operators_af8b3a1ae13170fa9badcb0c35bbe25b7}
+This function computes the occupation number for the level k. The wave function should be normalized using the square norm first.
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & unsigned integer indicating the desired level \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_operators_a9308511b927ba7a0ca73ffc5af76ec48}{\index{Operators@{Operators}!occupations@{occupations}}
+\index{occupations@{occupations}!Operators@{Operators}}
+\subsubsection[{occupations}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ void {\bf Operators}$<$ walker $>$\+::occupations (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$ \&}]{occupationn}
+\end{DoxyParamCaption}
+)}}\label{class_operators_a9308511b927ba7a0ca73ffc5af76ec48}
+This function calls the \hyperlink{class_operators_af8b3a1ae13170fa9badcb0c35bbe25b7}{occupation\+\_\+level()} function for each level andsaves the result into the std\+::vector occupationn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em occupationn} & reference to an std\+::vector used to save the occupation numbers for each level. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{operators_8h}{operators.\+h}\end{DoxyCompactItemize}

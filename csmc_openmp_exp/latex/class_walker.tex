@@ -1,0 +1,109 @@
+\hypertarget{class_walker}{\section{Walker$<$ walker $>$ Class Template Reference}
+\label{class_walker}\index{Walker$<$ walker $>$@{Walker$<$ walker $>$}}
+}
+
+
+{\ttfamily \#include $<$walker.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_walker_a5e4444d21494690947fca1eb0936c940}{Walker} (unsigned, unsigned, unsigned, double, const \hyperlink{class_wavefunction}{Wavefunction}$<$ walker $>$ \&, const \hyperlink{class_hamiltonian}{Hamiltonian}$<$ walker $>$ \&)
+\item 
+void \hyperlink{class_walker_a213ccb6a16ec4c211f4b15819f0ab4e4}{initialize\+\_\+walkers} (std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ walker $>$, double $>$ $>$ \&)
+\item 
+void \hyperlink{class_walker_a1f1cefe088f5fe295e5788bb33c5b330}{random\+\_\+walk} (unsigned, std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ walker $>$, double $>$ $>$ \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename walker$>$class Walker$<$ walker $>$}
+
+\hyperlink{class_walker}{Walker} class. walker type must be an unsigned type like uint32\+\_\+t or uint64\+\_\+t!
+
+
+\begin{DoxyParams}{Parameters}
+{\em levels} & integer value for the number of levels. \\
+\hline
+{\em N\+P} & integer value for the number of pairs. \\
+\hline
+{\em nbits} & integer value for the number of bits in the walker data type. \\
+\hline
+{\em wf} & const reference to a \hyperlink{class_wavefunction}{Wavefunction} class. \\
+\hline
+{\em H} & const reference to a \hyperlink{class_hamiltonian}{Hamiltonian} class. \\
+\hline
+{\em rgenerators} & an std\+::vector of mersenne generator objects. One per a thread. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_walker_a5e4444d21494690947fca1eb0936c940}{\index{Walker@{Walker}!Walker@{Walker}}
+\index{Walker@{Walker}!Walker@{Walker}}
+\subsubsection[{Walker}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ {\bf Walker}$<$ walker $>$\+::{\bf Walker} (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{nthreads, }
+\item[{unsigned}]{nlevels, }
+\item[{unsigned}]{np, }
+\item[{double}]{seed, }
+\item[{const {\bf Wavefunction}$<$ walker $>$ \&}]{rwf, }
+\item[{const {\bf Hamiltonian}$<$ walker $>$ \&}]{r\+H}
+\end{DoxyParamCaption}
+)}}\label{class_walker_a5e4444d21494690947fca1eb0936c940}
+Constructor for the walker class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nthreads} & integer value indicating the number of threads. \\
+\hline
+{\em nlevels} & integer value indicating the total number of levels. \\
+\hline
+{\em np} & integer value indicating the total number of pairs. \\
+\hline
+{\em seed} & floating point initial seed value for the mersenne generator. \\
+\hline
+{\em rwf} & const reference to \hyperlink{class_wavefunction}{Wavefunction} class. \\
+\hline
+{\em r\+H} & const reference to the \hyperlink{class_hamiltonian}{Hamiltonian} class. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_walker_a213ccb6a16ec4c211f4b15819f0ab4e4}{\index{Walker@{Walker}!initialize\+\_\+walkers@{initialize\+\_\+walkers}}
+\index{initialize\+\_\+walkers@{initialize\+\_\+walkers}!Walker@{Walker}}
+\subsubsection[{initialize\+\_\+walkers}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ void {\bf Walker}$<$ walker $>$\+::initialize\+\_\+walkers (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ walker $>$, double $>$ $>$ \&}]{walkers}
+\end{DoxyParamCaption}
+)}}\label{class_walker_a213ccb6a16ec4c211f4b15819f0ab4e4}
+This function is used to initialize the entire ensemble of walkers before the first step of the random walk. All walkers are initialized by placing all pairs into the lowest energy levels of the state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em walkers} & reference to an std\+::vector of std\+::pairs containing all the walkers in the ensemble. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_walker_a1f1cefe088f5fe295e5788bb33c5b330}{\index{Walker@{Walker}!random\+\_\+walk@{random\+\_\+walk}}
+\index{random\+\_\+walk@{random\+\_\+walk}!Walker@{Walker}}
+\subsubsection[{random\+\_\+walk}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ void {\bf Walker}$<$ walker $>$\+::random\+\_\+walk (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{numsteps, }
+\item[{std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ walker $>$, double $>$ $>$ \&}]{walkers}
+\end{DoxyParamCaption}
+)}}\label{class_walker_a1f1cefe088f5fe295e5788bb33c5b330}
+This function loops through the entire ensemble of walkers, from 0 to numsteps, and performs the random walk.
+
+
+\begin{DoxyParams}{Parameters}
+{\em numsteps} & unsigned int containing the number of single steps that occur. \\
+\hline
+{\em walkers} & const reference to an std\+::vector of std\+::pair containing all of the current generation of walkers. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{walker_8h}{walker.\+h}\end{DoxyCompactItemize}

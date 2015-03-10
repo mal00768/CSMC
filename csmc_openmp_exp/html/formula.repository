@@ -1,0 +1,23 @@
+\form#0:\[H_{pairing} = H_{1b} + H_{2b} = 2\sum_{i>0}^{\omega }\epsilon_{i}(a^{\dagger}_{i}a_{i} + a^{\dagger}_{\tilde{i}}a_{\tilde{i}}) - \sum_{i,j>0}^{\omega}G_{ij}a^{\dagger}_{j}a^{\dagger}_{\tilde{j}}a_{i}a_{\tilde{i}}\]
+\form#1:$\epsilon_{k}$
+\form#2:$G_{ij}$
+\form#3:\[H_{1b}|\textbf{n} \rangle = 2\sum_{i>0}^{\omega }\epsilon_{i}(a^{\dagger}_{i}a_{i} + a^{\dagger}_{\tilde{i}}a_{\tilde{i}}) |\textbf{n} \rangle \]
+\form#4:\[H_{2b}|\textbf{n} \rangle = \sum_{i,j>0}^{\omega}G_{ij}a^{\dagger}_{j}a^{\dagger}_{\tilde{j}}a_{i}a_{\tilde{i}} |\textbf{n} \rangle \]
+\form#5:$\langle \textbf{n}_{i} |H| \textbf{n}_{i} \rangle$
+\form#6:$\langle \textbf{n}_{j} |H| \textbf{n}_{i} \rangle$
+\form#7:\[\mathcal{P}_{ij} = \frac{\langle \textbf{n}_{j} |H| \textbf{n}_{i} \rangle}{d_{ij}}\]
+\form#8:$d_{ij} = \sum_{j} \langle \textbf{n}_{j} |H| \textbf{n}_{i} \rangle$
+\form#9:$\sum_{i} \langle \textbf{n}_{i} | H | \Psi \rangle$
+\form#10:$\langle \Psi | H | \Psi \rangle$
+\form#11:\[ \alpha_{i}^{2} \langle \textbf{n}_{i}|H_{1b}|\textbf{n}_{i} \rangle \]
+\form#12:\[ = \alpha_{i}^{2} \langle \textbf{n}_{i}| 2\sum_{i>0}^{\omega }\epsilon_{i}(a^{\dagger}_{i}a_{i} + a^{\dagger}_{\tilde{i}}a_{\tilde{i}}) |\textbf{n}_{i} \rangle \]
+\form#13:\[ \alpha_{i}\alpha_{j} \langle \textbf{n}_{j}|H_{2b}|\textbf{n}_{i} \rangle \]
+\form#14:\[ = \alpha_{i}\alpha_{j} \langle \textbf{n}_{j}| \sum_{i,j>0}^{\omega}G_{ij}a^{\dagger}_{j}a^{\dagger}_{\tilde{j}}a_{i}a_{\tilde{i}} |\textbf{n}_{i} \rangle \]
+\form#15:\[ |\Psi \rangle = \sum _{i}^{\omega} \alpha_{i} |\textbf{n}_{i} \rangle \]
+\form#16:$\omega$
+\form#17:$|\textbf{n}_{i} \rangle$
+\form#18:\[Norm = \sum_{i} A_{i}\]
+\form#19:$A_{i}$
+\form#20:$\alpha_{i}$
+\form#21:\[Norm = \sqrt{\sum_{i} A_{i}^{2}}\]
+\form#22:$| \textbf{n}_{i} \rangle$

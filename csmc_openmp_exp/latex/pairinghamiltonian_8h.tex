@@ -1,0 +1,35 @@
+\hypertarget{pairinghamiltonian_8h}{\section{pairinghamiltonian.\+h File Reference}
+\label{pairinghamiltonian_8h}\index{pairinghamiltonian.\+h@{pairinghamiltonian.\+h}}
+}
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include \char`\"{}wavefunction.\+h\char`\"{}}\\*
+Include dependency graph for pairinghamiltonian.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pairinghamiltonian_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{pairinghamiltonian_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_hamiltonian}{Hamiltonian$<$ walker $>$}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class describes the pairing hamiltonian defined as \[H_{pairing} = H_{1b} + H_{2b} = 2\sum_{i>0}^{\omega }\epsilon_{i}(a^{\dagger}_{i}a_{i} + a^{\dagger}_{\tilde{i}}a_{\tilde{i}}) - \sum_{i,j>0}^{\omega}G_{ij}a^{\dagger}_{j}a^{\dagger}_{\tilde{j}}a_{i}a_{\tilde{i}}\]
+
+The class is templated on the unsigned integer data type chosen to represent a state in the configuration space. This can be uint32\+\_\+t, uint64\+\_\+t, or uint128\+\_\+t depending on the architecture and compiler support of the host system.
+
+The constructor requires as input the number of levels (levels), the number of pairs (N\+P), an std\+::vector containing the set of single particle energies $\epsilon_{k}$ (Esp), and lastly a two dimensional std\+::vector containing the set of pairing matrix elements $G_{ij}$ (Gij). 

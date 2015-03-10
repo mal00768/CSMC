@@ -1,0 +1,35 @@
+\hypertarget{operators_8h}{\section{operators.\+h File Reference}
+\label{operators_8h}\index{operators.\+h@{operators.\+h}}
+}
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\\*
+{\ttfamily \#include \char`\"{}pairinghamiltonian.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}wavefunction.\+h\char`\"{}}\\*
+Include dependency graph for operators.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operators_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{operators_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_operators}{Operators$<$ walker $>$}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the functions necessary to calculate the ground state energy expectation values, $\sum_{i} \langle \textbf{n}_{i} | H | \Psi \rangle$ and $\langle \Psi | H | \Psi \rangle$, and the occupation numbers for all levels. It inherits public and protected members from the Hamiltonian$<$walker$>$ class. This is necessary to include functions defining how the hamiltonian acts on states.
+
+The class is templated on the unsigned integer data type chosen to represent a state in the configuration space. This can be uint32\+\_\+t, uint64\+\_\+t, or uint128\+\_\+t depending on the architecture and compiler support of the host system.
+
+The constructor takes as input the number of levels (levels), the number of pairs (np), an std\+::vector containing the set of single particle energies $\epsilon_{k}$ (Esp), a two dimensional std\+::vector containing the set of pairing matrix elements $G_{ij}$ (Gij), and finally a const reference to the wave function (Wavefunction$<$walker$>$). 

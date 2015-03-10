@@ -1,0 +1,48 @@
+\hypertarget{wavefunction_8h}{\section{wavefunction.\+h File Reference}
+\label{wavefunction_8h}\index{wavefunction.\+h@{wavefunction.\+h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\\*
+{\ttfamily \#include $<$functional$>$}\\*
+{\ttfamily \#include \char`\"{}randomc.\+h\char`\"{}}\\*
+Include dependency graph for wavefunction.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{wavefunction_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{wavefunction_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classstd_1_1hash_3_01vector_3_01walker_01_4_01_4}{std\+::hash$<$ vector$<$ walker $>$ $>$}
+\item 
+class \hyperlink{class_wavefunction}{Wavefunction$<$ walker $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacestd}{std}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the wave function for a paired, many body wave function in configuration space \[ |\Psi \rangle = \sum _{i}^{\omega} \alpha_{i} |\textbf{n}_{i} \rangle \] where $\omega$ is the total number of different configurations, $|\textbf{n}_{i} \rangle$ is the i-\/th configuration, and $\omega$ is the amplitude of that configuration.
+
+The underlying data structure of this class is an std\+::unordered\+\_\+map that uses contains std\+::vector$<$walker$>$/double key/value pairs.
+
+The class is templated on the unsigned integer data type chosen to represent a state in the configuration space. This can be uint32\+\_\+t, uint64\+\_\+t, or uint128\+\_\+t depending on the architecture and compiler support of the host system.
+
+The constructor requires as input the number of threads, the number of pairs (N\+P), the number of levels (numlevels), and the initial seed for the mersenne generator. 

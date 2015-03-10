@@ -1,0 +1,46 @@
+\hypertarget{walker_8h}{\section{walker.\+h File Reference}
+\label{walker_8h}\index{walker.\+h@{walker.\+h}}
+}
+
+
+Function definitions of random number class. Uses mersenne twister algorithm.  
+
+
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include \char`\"{}randomc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mersenne.\+cpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pairinghamiltonian.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}wavefunction.\+h\char`\"{}}\\*
+Include dependency graph for walker.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{walker_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{walker_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_walker}{Walker$<$ walker $>$}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Function definitions of random number class. Uses mersenne twister algorithm. 
+
+Random number class. Uses mersenne twister algorithm.
+
+This is the \hyperlink{class_walker}{Walker} class which handles the actual random evolution of the ensemble.
+
+The class is templated on the unsigned integer data type chosen to represent a state in the configuration space. This can be uint32\+\_\+t, uint64\+\_\+t, or uint128\+\_\+t depending on the architecture and compiler support of the host system. 

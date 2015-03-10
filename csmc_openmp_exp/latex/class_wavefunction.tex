@@ -1,0 +1,187 @@
+\hypertarget{class_wavefunction}{\section{Wavefunction$<$ walker $>$ Class Template Reference}
+\label{class_wavefunction}\index{Wavefunction$<$ walker $>$@{Wavefunction$<$ walker $>$}}
+}
+
+
+{\ttfamily \#include $<$wavefunction.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_wavefunction_a68f7658cb4bc528aa3848329f78b54f9}{typedef std\+::unordered\+\_\+map\\*
+$<$ std\+::vector$<$ walker $>$\\*
+, double $>$\+::const\+\_\+iterator {\bfseries const\+\_\+iterator}}\label{class_wavefunction_a68f7658cb4bc528aa3848329f78b54f9}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_wavefunction_a3a714d647bd12a2517ec001ce3c03b2e}{{\bfseries Wavefunction} (unsigned, unsigned)}\label{class_wavefunction_a3a714d647bd12a2517ec001ce3c03b2e}
+
+\item 
+\hyperlink{class_wavefunction_a137b3cd275dd04a461f3f4fe11062809}{Wavefunction} (unsigned, unsigned, unsigned, unsigned)
+\item 
+\hyperlink{class_wavefunction_aec10cecc3b258442f3f871fff8c00ac2}{$\sim$\+Wavefunction} ()
+\item 
+void \hyperlink{class_wavefunction_aceb1be3ccbdd127a6d2eee3e8e9e81aa}{random\+\_\+choice} (std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ walker $>$, double $>$ $>$ \&)
+\item 
+void \hyperlink{class_wavefunction_ae83a43a3f674f171fd469cd4850e5e7a}{weighted\+\_\+choice} (std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ walker $>$, double $>$ $>$ \&)
+\item 
+void \hyperlink{class_wavefunction_ab9f3f8ac0b6c1343bb1c37dd0d0f2106}{insert} (const std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ walker $>$, double $>$ $>$ \&)
+\item 
+double \hyperlink{class_wavefunction_af793b1541b937df4e668dd504fbdb18a}{configuration\+\_\+weight} (const std\+::vector$<$ walker $>$ \&) const 
+\item 
+void \hyperlink{class_wavefunction_afe48f8650867300927b08298736d2545}{clear} ()
+\item 
+void \hyperlink{class_wavefunction_aa041283ab73a60e6693446e1f45964bb}{normalise\+\_\+ln} ()
+\item 
+void \hyperlink{class_wavefunction_ae1c1236c133b2d375a969e765787cc7d}{normalise\+\_\+sq} ()
+\item 
+\hypertarget{class_wavefunction_ac83a68dc42b37228b809171b265b13d3}{const\+\_\+iterator {\bfseries begin} () const }\label{class_wavefunction_ac83a68dc42b37228b809171b265b13d3}
+
+\item 
+\hypertarget{class_wavefunction_a151f1b00cfeade0642b04e70298d069b}{const\+\_\+iterator {\bfseries end} () const }\label{class_wavefunction_a151f1b00cfeade0642b04e70298d069b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename walker$>$class Wavefunction$<$ walker $>$}
+
+\hyperlink{class_wavefunction}{Wavefunction} class. walker type must be an unsigned type like uint32\+\_\+t or uint64\+\_\+t!
+
+
+\begin{DoxyParams}{Parameters}
+{\em N\+P} & integer value for the number of pairs. \\
+\hline
+{\em numlevels} & integer value for the number of levels. \\
+\hline
+{\em nbits} & nbits integer value for the number of bits in the walker data type. \\
+\hline
+{\em rgenerators} & an std\+::vector of mersenne generator objects. One per a thread. \\
+\hline
+{\em wave\+\_\+function} & std\+::unordered\+\_\+map container for the wave function. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_wavefunction_a137b3cd275dd04a461f3f4fe11062809}{\index{Wavefunction@{Wavefunction}!Wavefunction@{Wavefunction}}
+\index{Wavefunction@{Wavefunction}!Wavefunction@{Wavefunction}}
+\subsubsection[{Wavefunction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ {\bf Wavefunction}$<$ walker $>$\+::{\bf Wavefunction} (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{nthreads, }
+\item[{unsigned}]{np, }
+\item[{unsigned}]{nlevels, }
+\item[{unsigned}]{seed}
+\end{DoxyParamCaption}
+)}}\label{class_wavefunction_a137b3cd275dd04a461f3f4fe11062809}
+Constructor the \hyperlink{class_wavefunction}{Wavefunction} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nthreads} & integer value representing the number of threads being used \\
+\hline
+{\em np} & integer value representing the number of pairs \\
+\hline
+{\em nlevels} & integer value representing the number of levels \\
+\hline
+{\em seed} & value representing the initial seed to be used to create the mersenne generator for each thread \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_wavefunction_aec10cecc3b258442f3f871fff8c00ac2}{\index{Wavefunction@{Wavefunction}!````~Wavefunction@{$\sim$\+Wavefunction}}
+\index{````~Wavefunction@{$\sim$\+Wavefunction}!Wavefunction@{Wavefunction}}
+\subsubsection[{$\sim$\+Wavefunction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ {\bf Wavefunction}$<$ walker $>$\+::$\sim${\bf Wavefunction} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_wavefunction_aec10cecc3b258442f3f871fff8c00ac2}
+Destructor the \hyperlink{class_wavefunction}{Wavefunction} class. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_wavefunction_afe48f8650867300927b08298736d2545}{\index{Wavefunction@{Wavefunction}!clear@{clear}}
+\index{clear@{clear}!Wavefunction@{Wavefunction}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ void {\bf Wavefunction}$<$ walker $>$\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_wavefunction_afe48f8650867300927b08298736d2545}
+This function will clear the std\+::unordered\+\_\+map containing the wave function. \hypertarget{class_wavefunction_af793b1541b937df4e668dd504fbdb18a}{\index{Wavefunction@{Wavefunction}!configuration\+\_\+weight@{configuration\+\_\+weight}}
+\index{configuration\+\_\+weight@{configuration\+\_\+weight}!Wavefunction@{Wavefunction}}
+\subsubsection[{configuration\+\_\+weight}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ double {\bf Wavefunction}$<$ walker $>$\+::configuration\+\_\+weight (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ walker $>$ \&}]{crwalker}
+\end{DoxyParamCaption}
+) const}}\label{class_wavefunction_af793b1541b937df4e668dd504fbdb18a}
+This function returns the current weight of a configuration in the wave function. If the configuration exists then it's weight is returned otherwise 0 is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em crwalker} & a const reference to an std\+::vector representing a configuration $| \textbf{n}_{i} \rangle$ \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_wavefunction_ab9f3f8ac0b6c1343bb1c37dd0d0f2106}{\index{Wavefunction@{Wavefunction}!insert@{insert}}
+\index{insert@{insert}!Wavefunction@{Wavefunction}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ void {\bf Wavefunction}$<$ walker $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ walker $>$, double $>$ $>$ \&}]{walkers}
+\end{DoxyParamCaption}
+)}}\label{class_wavefunction_ab9f3f8ac0b6c1343bb1c37dd0d0f2106}
+This function inserts an ensemble of walkers in the wave function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em walkers} & const reference to a two dimensional std\+::vector of size equal to the number of walkers. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_wavefunction_aa041283ab73a60e6693446e1f45964bb}{\index{Wavefunction@{Wavefunction}!normalise\+\_\+ln@{normalise\+\_\+ln}}
+\index{normalise\+\_\+ln@{normalise\+\_\+ln}!Wavefunction@{Wavefunction}}
+\subsubsection[{normalise\+\_\+ln}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ void {\bf Wavefunction}$<$ walker $>$\+::normalise\+\_\+ln (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_wavefunction_aa041283ab73a60e6693446e1f45964bb}
+This function normalizes the wave function following a linear normalization condition. \[Norm = \sum_{i} A_{i}\] where $A_{i}$ is the un-\/normalized amplitude of a state i in the wave function.
+
+The result is that each amplitude $\alpha_{i}$ in the normalized wave function represents the classical probability to select the state via a random sampling. \hypertarget{class_wavefunction_ae1c1236c133b2d375a969e765787cc7d}{\index{Wavefunction@{Wavefunction}!normalise\+\_\+sq@{normalise\+\_\+sq}}
+\index{normalise\+\_\+sq@{normalise\+\_\+sq}!Wavefunction@{Wavefunction}}
+\subsubsection[{normalise\+\_\+sq}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ void {\bf Wavefunction}$<$ walker $>$\+::normalise\+\_\+sq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_wavefunction_ae1c1236c133b2d375a969e765787cc7d}
+This function normalizes the wave function following a quadratic normalization condition. \[Norm = \sqrt{\sum_{i} A_{i}^{2}}\] where $A_{i}$ is the un-\/normalized amplitude of a state i in the wave function.
+
+The result is that each amplitude $\alpha_{i}$ in the normalized wave function represents the quantum probability to select the state via a random sampling. \hypertarget{class_wavefunction_aceb1be3ccbdd127a6d2eee3e8e9e81aa}{\index{Wavefunction@{Wavefunction}!random\+\_\+choice@{random\+\_\+choice}}
+\index{random\+\_\+choice@{random\+\_\+choice}!Wavefunction@{Wavefunction}}
+\subsubsection[{random\+\_\+choice}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ void {\bf Wavefunction}$<$ walker $>$\+::random\+\_\+choice (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ walker $>$, double $>$ $>$ \&}]{walkers}
+\end{DoxyParamCaption}
+)}}\label{class_wavefunction_aceb1be3ccbdd127a6d2eee3e8e9e81aa}
+This function randomly selects, in parallel, a new ensemble of walkers from the previous wave\+\_\+function. Each walker is represented by an std\+::pair containing an std\+::vector representing the states configuration and a double representing the amplitude. The random selection initializes the vector to a configuration existing in the wave function and sets the walkers initial amplitude to the normalized amplitude from the wave function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em walkers} & const reference to a two dimensional std\+::vector of size equal to the number of walkers. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_wavefunction_ae83a43a3f674f171fd469cd4850e5e7a}{\index{Wavefunction@{Wavefunction}!weighted\+\_\+choice@{weighted\+\_\+choice}}
+\index{weighted\+\_\+choice@{weighted\+\_\+choice}!Wavefunction@{Wavefunction}}
+\subsubsection[{weighted\+\_\+choice}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename walker $>$ void {\bf Wavefunction}$<$ walker $>$\+::weighted\+\_\+choice (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ walker $>$, double $>$ $>$ \&}]{walkers}
+\end{DoxyParamCaption}
+)}}\label{class_wavefunction_ae83a43a3f674f171fd469cd4850e5e7a}
+This function selects via the normalized probabilities, in parallel, a new ensemble of walkers from the previous wave\+\_\+function. Each walker is represented by an std\+::pair containing an std\+::vector representing the states configuration and a double representing the amplitude. The weighted selection initializes the vector to a configuration existing in the wave function and sets the walkers initial amplitude to unity. Thus, most probable configurations are selected from the wave\+\_\+function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em walkers} & const reference to a two dimensional std\+::vector of size equal to the number of walkers. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{wavefunction_8h}{wavefunction.\+h}\end{DoxyCompactItemize}
