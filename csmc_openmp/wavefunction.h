@@ -39,7 +39,7 @@ namespace std {
             walker hash = 0;
             
             for(size_t i = 0; i < rstate.size(); i++) {
-                hash += std::hash<walker>()(rstate[i]);
+                hash ^= std::hash<walker>()(rstate[i]);
             }
             
             return hash;
